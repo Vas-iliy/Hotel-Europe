@@ -1,6 +1,6 @@
 <?php
 
-namespace luxury\base;
+namespace europa\base;
 
 abstract class Controller
 {

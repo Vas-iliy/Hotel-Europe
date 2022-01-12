@@ -3,7 +3,7 @@
 namespace app\controllers;
 
 use app\models\AppModel;
-use luxury\base\Controller;
+use europa\base\Controller;
 
 class AppController extends Controller
 {

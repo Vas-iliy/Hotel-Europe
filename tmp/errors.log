@@ -6,3 +6,19 @@
         Текст ошибки: Контроллер app\controllers\ProductsController не найден | Файл: C:\Programming\OpenServer\domains\projectTrening\HotelEuropa\vendor\europa\core\Router.php Строка: 42 
         
 ========================
+[2022-01-12 15:06:59] 
+        Текст ошибки: Class 'luxury\Db' not found | Файл: C:\Programming\OpenServer\domains\projectTrening\HotelEuropa\vendor\europa\core\base\Model.php Строка: 16 
+        
+========================
+[2022-01-12 15:08:35] 
+        Текст ошибки: Class 'R' not found | Файл: C:\Programming\OpenServer\domains\projectTrening\HotelEuropa\vendor\europa\core\Db.php Строка: 13 
+        
+========================
+[2022-01-12 15:09:19] 
+        Текст ошибки: Не найден вид C:\Programming\OpenServer\domains\projectTrening\HotelEuropa/app/views/Home/index.php | Файл: C:\Programming\OpenServer\domains\projectTrening\HotelEuropa\vendor\europa\core\base\View.php Строка: 44 
+        
+========================
+[2022-01-12 15:09:55] 
+        Текст ошибки: Не найден шаблон europa | Файл: C:\Programming\OpenServer\domains\projectTrening\HotelEuropa\vendor\europa\core\base\View.php Строка: 52 
+        
+========================

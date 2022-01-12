@@ -2,7 +2,7 @@
 
 namespace app\models;
 
-use luxury\base\Model;
+use europa\base\Model;
 
 class AppModel extends Model
 {
