@@ -3,7 +3,9 @@
 namespace app\controllers;
 
 use app\models\AppModel;
+use europa\App;
 use europa\base\Controller;
+use europa\Cache;
 
 class AppController extends Controller
 {
@@ -16,6 +18,16 @@ class AppController extends Controller
         new AppModel();
         if (checkUri($this->uri) || $this->uri !== trimUri($this->uri)) {
             throw new \Exception('Страница не найдена', 404);
+        }
+        self::cacheMenu();
+    }
+
+    public static function cacheMenu() {
+        $cache = Cache::instance();
+        $menu = $cache->get('menu');
+        if (!$menu) {
+            $menu = \R::getAssoc('SELECT * FROM menu ');
+            $cache->set('menu', $menu);
         }
     }
 }

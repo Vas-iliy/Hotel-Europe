@@ -27,33 +27,11 @@
 </div>
 
 <!-- Header Section Begin -->
-<header class="header-section">
-    <div class="container-fluid">
-        <div class="inner-header">
-            <div class="logo">
-                <a href="./index.html"><img src="img/logo.png" alt=""></a>
-            </div>
-            <div class="nav-right">
-                <a href="#" class="primary-btn">Make a Reservation</a>
-            </div>
-            <nav class="main-menu mobile-menu">
-                <ul>
-                    <li class="active"><a href="./index.html">Home</a></li>
-                    <li><a href="about-us.html">About</a></li>
-                    <li><a href="rooms.html">Rooms</a></li>
-                    <li><a href="services.html">Services</a></li>
-                    <li><a href="blog.html">News</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                </ul>
-            </nav>
-            <div id="mobile-menu-wrap"></div>
-        </div>
-    </div>
-</header>
+<? new \app\widgets\menu\Menu();?>
 <!-- Header End -->
 
 <!-- Hero Area Section Begin -->
-<!--Шапка, только в home-->
+<?if($this->meta['title'] === 'Europa Hotel'):?>
 <section class="hero-area set-bg" data-setbg="img/hero-bg.jpg">
     <div class="container">
         <div class="row">
@@ -65,7 +43,9 @@
         </div>
     </div>
 </section>
-<!-- Hero Area Section End -->
+<?else:?>
+    <div class="hero-area set-bg other-page" data-setbg="img/about_bg.jpg"></div>
+<?endif;?>
 
 <!-- Search Filter Section Begin -->
 <section class="search-filter">
