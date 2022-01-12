@@ -1,0 +1,8 @@
+[2022-01-12 14:53:04] 
+        Текст ошибки: Контроллер app\controllers\ProductsController не найден | Файл: C:\Programming\OpenServer\domains\projectTrening\HotelEuropa\vendor\europa\core\Router.php Строка: 42 
+        
+========================
+[2022-01-12 14:54:39] 
+        Текст ошибки: Контроллер app\controllers\ProductsController не найден | Файл: C:\Programming\OpenServer\domains\projectTrening\HotelEuropa\vendor\europa\core\Router.php Строка: 42 
+        
+========================
