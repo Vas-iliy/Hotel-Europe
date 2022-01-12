@@ -1,4 +1,4 @@
-a:2:{s:4:"data";s:1433:"    <header class="header-section">
+a:2:{s:4:"data";s:1598:"    <header class="header-section">
         <div class="container-fluid">
             <div class="inner-header">
                 <div class="logo">
@@ -10,19 +10,19 @@ a:2:{s:4:"data";s:1433:"    <header class="header-section">
                             <a href="http://projecttrening/HotelEuropa">Home</a>
                         </li>
                                                 <li >
-                            <a href="/about">About</a>
+                            <a href="http://projecttrening/HotelEuropa/about">About</a>
                         </li>
                                                 <li >
-                            <a href="/rooms">Rooms</a>
+                            <a href="http://projecttrening/HotelEuropa/rooms">Rooms</a>
                         </li>
                                                 <li >
-                            <a href="/services">Services</a>
+                            <a href="http://projecttrening/HotelEuropa/services">Services</a>
                         </li>
                                                 <li >
-                            <a href="/news">News</a>
+                            <a href="http://projecttrening/HotelEuropa/news">News</a>
                         </li>
                                                 <li >
-                            <a href="/contact">Contact</a>
+                            <a href="http://projecttrening/HotelEuropa/contact">Contact</a>
                         </li>
                                             </ul>
                 </nav>
@@ -30,4 +30,4 @@ a:2:{s:4:"data";s:1433:"    <header class="header-section">
             </div>
         </div>
     </header>
-";s:8:"end_time";i:1673533230;}
+";s:8:"end_time";i:1673538047;}

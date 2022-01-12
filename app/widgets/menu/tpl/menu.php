@@ -9,7 +9,7 @@
                     <ul>
                         <?foreach ($this->data as $menu):?>
                         <li <?=(($_SERVER['REQUEST_URI'] === '/' . $menu['alias']) || ($menu['alias'] === 'home') ? 'class="active"' : '')?>>
-                            <a href="<?=($menu['alias'] === 'home' ? PATH: '/' . $menu['alias'])?>"><?=$menu['title']?></a>
+                            <a href="<?=($menu['alias'] === 'home' ? PATH : PATH  . '/'. $menu['alias'])?>"><?=$menu['title']?></a>
                         </li>
                         <?endforeach;?>
                     </ul>
