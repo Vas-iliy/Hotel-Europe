@@ -1,54 +1,38 @@
 <!-- About Us Section Begin -->
+<?if(!empty($about)):?>
 <section class="about-us spad">
     <div class="container">
+        <?foreach ($about as $item):?>
         <div class="row">
             <div class="col-lg-7">
                 <div class="about-left">
                     <div class="section-title">
                         <span>a memorable holliday</span>
-                        <h2>A great stay in a <br />lovely hotel.</h2>
+                        <h2><?=$item['title']?></h2>
                     </div>
-                    <p class="second-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-                        tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida.
-                        Risus commodo viverra maecenas. Donec in sodales dui, a blandit nunc. Pellentesque id eros
-                        venenatis, sollicitudin neque sodales, vehicula nibh. Nam massa odio, porttitor vitae
-                        efficitur non, ultricies volutpat tellus.</p>
-                    <p>Dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-                        dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra.</p>
-                    <a href="#" class="primary-btn">Make a Reservation</a>
+                    <p class="second-text"><?=$item['text']?></p>
+                    <a href="reservation" class="primary-btn">Make a Reservation</a>
                 </div>
             </div>
+            <?if($item['img']):?>
             <div class="col-lg-5">
                 <div class="row">
-                    <div class="col-lg-7 col-md-7">
-                        <div class="about-img">
-                            <img src="img/about/about-1.jpg" alt="">
+                    <?foreach ($item['img'] as $img):?>
+                        <div class="col-sm-6">
+                            <div class="about-img">
+                                <img src="<?=PATH?>/img/about/<?=$img['img']?>" alt="">
+                            </div>
                         </div>
-                    </div>
-                    <div class="col-lg-5 col-md-5">
-                        <div class="about-img second-img">
-                            <img src="img/about/about-2.jpg" alt="">
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-lg-5 col-md-5">
-                        <div class="about-img third-img">
-                            <img src="img/about/about-3.jpg" alt="">
-                        </div>
-                    </div>
-                    <div class="col-lg-7 col-md-7">
-                        <div class="about-img">
-                            <img src="img/about/about-4.jpg" alt="">
-                        </div>
-                    </div>
+                    <?endforeach;?>
                 </div>
             </div>
+            <?endif;?>
         </div>
+        <?endforeach;?>
     </div>
 </section>
+<?endif;?>
 <!-- About Us Section End -->
-
 <!-- Milestone Counter Section Begin -->
 <section class="milestone-counter spad set-bg" data-setbg="img/about/milestone-bg.jpg">
     <div class="container">
