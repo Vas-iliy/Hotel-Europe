@@ -9,7 +9,7 @@
             </div>
             <p><?=$descr->descr?></p>
             <div class="intro-right">
-                <a href="#" class="primary-btn">Make a Reservation</a>
+                <a href="reservation" class="primary-btn">Make a Reservation</a>
             </div>
         </div>
     </div>
@@ -109,7 +109,7 @@
                         <h2>“<?=$about['title']?>”</h2>
                     </div>
                     <p><?=$about['text']?></p>
-                    <a href="#" class="primary-btn">Make a Reservation</a>
+                    <a href="reservation" class="primary-btn">Make a Reservation</a>
                 </div>
             </div>
             <?if(!empty($about['img'])):?>

@@ -5,6 +5,9 @@
                 <div class="logo">
                     <a href="<?=PATH?>"><img src="img/logo.png" alt=""></a>
                 </div>
+                <div class="nav-right">
+                    <a href="reservation" class="primary-btn">Make a Reservation</a>
+                </div>
                 <nav class="main-menu mobile-menu">
                     <ul>
                         <?foreach ($this->data as $menu):?>
