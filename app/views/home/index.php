@@ -1,74 +1,56 @@
 <!-- Intro Text Section Begin -->
+<?if(!empty($descr)):?>
 <section class="intro-section spad">
     <div class="container">
         <div class="row intro-text">
             <div class="section-title">
                 <span>a memorable holliday</span>
-                <h2>A great stay in a lovely hotel.</h2>
+                <h2><?=$descr->title?></h2>
             </div>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-                labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo
-                viverra maecenas. Donec in sodales dui, a blandit nunc. Pellentesque id eros venenatis,
-                sollicitudin neque sodales, vehicula nibh. Nam massa odio, porttitor vitae efficitur non,
-                ultricies volutpat tellus.</p>
+            <p><?=$descr->descr?></p>
             <div class="intro-right">
                 <a href="#" class="primary-btn">Make a Reservation</a>
             </div>
         </div>
     </div>
 </section>
+<?endif;?>
 <!-- Intro Text Section End -->
 
 <!-- Facilities Section Begin -->
+<?if(!empty($topRooms)):?>
 <section class="facilities-section">
     <div class="container-fluid">
         <div class="row">
-            <div class="col-lg-6">
-                <div class="facilities-item set-bg" data-setbg="img/faci-1.jpg">
-                    <div class="fi-title">
-                        <h2>Luxury Suite Room</h2>
-                        <p>From $399</p>
+            <?foreach ($topRooms as $room):?>
+                <div class="col-lg-6">
+                    <div class="facilities-item set-bg" data-setbg="<?=PATH?>/img/rooms/<?=$room['img']['img']?>">
+                        <div class="fi-title">
+                            <h2><?=$room['title']?></h2>
+                            <p>From $<?=$room['price']?></p>
+                        </div>
+                        <?if(!empty($room['enabled'])):?>
+                            <div class="fi-features">
+                                <?foreach ($room['enabled'] as $enabled):?>
+                                <div class="fi-info">
+                                    <i class="<?=$enabled['sign']?>"></i>
+                                    <p><?=$enabled['title']?></p>
+                                </div>
+                                <?endforeach;?>
+                            </div>
+                        <?endif;?>
+                        <a href="/rooms/<?=$room['alias']?>" class="primary-btn">Make a Reservation</a>
                     </div>
-                    <div class="fi-features">
-                        <div class="fi-info">
-                            <i class="flaticon-019-television"></i>
-                            <p>Smart TV</p>
-                        </div>
-                        <div class="fi-info">
-                            <i class="flaticon-029-wifi"></i>
-                            <p>High Wi-fii</p>
-                        </div>
-                        <div class="fi-info">
-                            <i class="flaticon-003-air-conditioner"></i>
-                            <p>AC</p>
-                        </div>
-                        <div class="fi-info">
-                            <i class="flaticon-036-parking"></i>
-                            <p>Parking</p>
-                        </div>
-                        <div class="fi-info">
-                            <i class="flaticon-007-swimming-pool"></i>
-                            <p>Pool</p>
-                        </div>
-                    </div>
-                    <a href="#" class="primary-btn">Make a Reservation</a>
                 </div>
-            </div>
-            <div class="col-lg-6">
-                <div class="facilities-item set-bg fi-right" data-setbg="img/faci-2.jpg">
-                    <div class="fi-title">
-                        <h2>Infinity Pool</h2>
-                        <p>For all our guests</p>
-                    </div>
-                    <a href="#" class="primary-btn">Make a Reservation</a>
-                </div>
-            </div>
+            <?endforeach;?>
         </div>
     </div>
 </section>
+<?endif;?>
 <!-- Facilities Section End -->
 
 <!-- Testimonial Section Begin -->
+<?if(!empty($comments)):?>
 <section class="testimonial-section spad">
     <div class="container">
         <div class="row">
@@ -77,61 +59,34 @@
             </div>
         </div>
         <div class="row">
+            <?foreach ($comments as $comment):?>
             <div class="col-lg-6">
                 <div class="testimonial-item">
                     <div class="ti-time">
-                        02 / 02 / 2019
+                        <?=date('d / m/ Y', strtotime($comment['data_room']))?>
                     </div>
-                    <h4>We loved our stay</h4>
+                    <h4><?=$comment['title']?></h4>
                     <div class="rating">
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
+                        <?for ($i=0; $i < $comment['rating']; $i++):?>
+                            <i class="fa fa-star"></i>
+                        <?endfor;?>
                     </div>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiselit. Vivamus libero mauris, bibendum eget
-                        sapien ac, ultrices rhoncus ipsum. Donec nec sapien in urna fermentum ornare.</p>
+                    <p><?=$comment['descr']?></p>
                     <div class="ti-author">
                         <div class="author-pic">
-                            <img src="img/author-1.png" alt="">
+                            <img src="<?=PATH?>/img/guests/<?=$comment['img']?>" alt="">
                         </div>
                         <div class="author-text">
-                            <h6>JOHN DOE <span>Madrid</span></h6>
+                            <h6><?=$comment['name']?> <span><?=$comment['surname']?></span></h6>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="col-lg-6">
-                <div class="testimonial-item">
-                    <div class="ti-time">
-                        02 / 02 / 2019
-                    </div>
-                    <h4>I will come back again</h4>
-                    <div class="rating">
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                    </div>
-                    <p>Ipsum dolor sit amet, consectetur adipiselit. Vivamus libero mauris, bibendum eget sapien ac,
-                        ultrices rhoncus ipsum. Donec nec sapien in urna fermentum ornare.</p>
-                    <div class="ti-author">
-                        <div class="author-pic">
-                            <img src="img/author-2.png" alt="">
-                        </div>
-                        <div class="author-text">
-                            <h6>Maria Smith <span>Madrid</span></h6>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            <?endforeach;?>
         </div>
     </div>
 </section>
-<!-- Testimonial Section End -->
-
+<?endif;?>
 <!-- Video Section Begin -->
 <div class="video-section">
     <div class="video-bg set-bg" data-setbg="img/video-bg.jpg"></div>

@@ -3,7 +3,6 @@
 namespace app\controllers;
 
 use app\models\AppModel;
-use europa\App;
 use europa\base\Controller;
 use europa\Cache;
 
@@ -29,5 +28,9 @@ class AppController extends Controller
             $menu = \R::getAssoc('SELECT * FROM menu ');
             $cache->set('menu', $menu);
         }
+    }
+
+    public function getPage() {
+        return \R::getRow('SELECT id FROM menu WHERE alias = ?', [str_replace('Controller', '', $this->controller)])['id'];
     }
 }
