@@ -16,7 +16,6 @@
 </section>
 <?endif;?>
 <!-- Intro Text Section End -->
-
 <!-- Facilities Section Begin -->
 <?if(!empty($topRooms)):?>
 <section class="facilities-section">
@@ -88,57 +87,46 @@
 </section>
 <?endif;?>
 <!-- Video Section Begin -->
+<?if($topRooms):?>
 <div class="video-section">
     <div class="video-bg set-bg" data-setbg="img/video-bg.jpg"></div>
     <div class="container">
         <div class="video-text set-bg" data-setbg="img/video-inside-bg.jpg">
-            <a href="https://www.youtube.com/watch?v=j56YlCXuPFU" class="pop-up"><i class="fa fa-play"></i></a>
+            <a href="<?=$topRooms[0]['video']?>" class="pop-up"><i class="fa fa-play"></i></a>
         </div>
     </div>
 </div>
+<?endif;?>
 <!-- Video Section End -->
-
 <!-- Home Page About Section Begin -->
+<?if(!empty($about)):?>
 <section class="homepage-about spad">
     <div class="container">
         <div class="row">
             <div class="col-lg-6">
                 <div class="about-text">
                     <div class="section-title">
-                        <h2>“Customers love our <br />facilities”</h2>
+                        <h2>“<?=$about['title']?>”</h2>
                     </div>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus libero mauris, bibendum eget
-                        sapien ac, ultrices rhoncus ipsum. Donec nec sapien in urna fermentum ornare. Morbi vel
-                        ultrices leo. Sed eu turpis eu arcu vehicula fringilla ut vitae orci. Suspendisse maximus
-                        malesuada. </p>
+                    <p><?=$about['text']?></p>
                     <a href="#" class="primary-btn">Make a Reservation</a>
                 </div>
             </div>
+            <?if(!empty($about['img'])):?>
             <div class="col-lg-6">
                 <div class="row">
+                    <?foreach ($about['img'] as $img):?>
                     <div class="col-sm-6">
                         <div class="about-img">
-                            <img src="img/home-about-1.jpg" alt="">
+                            <img src="<?=PATH?>/img/about/<?=$img['img']?>" alt="">
                         </div>
                     </div>
-                    <div class="col-sm-6">
-                        <div class="about-img">
-                            <img src="img/home-about-2.jpg" alt="">
-                        </div>
-                    </div>
-                    <div class="col-sm-6">
-                        <div class="about-img">
-                            <img src="img/home-about-3.jpg" alt="">
-                        </div>
-                    </div>
-                    <div class="col-sm-6">
-                        <div class="about-img">
-                            <img src="img/home-about-4.jpg" alt="">
-                        </div>
-                    </div>
+                    <?endforeach;?>
                 </div>
             </div>
+            <?endif;?>
         </div>
     </div>
 </section>
+<?endif;?>
 <!-- Home Page About Section End -->
