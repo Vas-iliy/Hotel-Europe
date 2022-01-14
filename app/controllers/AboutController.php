@@ -12,7 +12,8 @@ class AboutController extends AppController
         $about = \R::getAll('SELECT * FROM about');
         $about = ImageModel::withImg('about', 'image_about', $about, true, AppModel::getId($about));
         $us = AboutModel::getAboutUs();
-        $this->set(compact('about', 'count', 'us'));
+        $awards = \R::getAll('SELECT * FROM awards ORDER BY id DESC LIMIT 6');
+        $this->set(compact('about', 'count', 'us', 'awards'));
         $this->setMeta('About');
     }
 }

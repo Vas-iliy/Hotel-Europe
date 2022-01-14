@@ -77,6 +77,7 @@
 <?endif;?>
 <!-- Milestone Counter Section End -->
 <!-- Award Section Begin -->
+<?if(!empty($awards)):?>
 <section class="award-section spad">
     <div class="container">
         <div class="row">
@@ -87,69 +88,20 @@
             </div>
         </div>
         <div class="row">
+            <?foreach ($awards as $award):?>
             <div class="col-lg-4 col-sm-6">
                 <div class="award-item">
-                    <img src="img/about/award-img.png" alt="">
-                    <h5>2011</h5>
-                    <h4>Best Hotel in Europe</h4>
+                    <h4><?=$award['title']?></h4>
+                    <h5><?=$award['year']?></h5>
                     <span>Elite Hotel award</span>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiselit. Vivamus libero mauris, bibendum eget
-                        sapien ac, ultrices rhoncus ipsum. Donec nec sapien in urna.</p>
+                    <p><?=$award['descr']?></p>
                 </div>
             </div>
-            <div class="col-lg-4 col-sm-6">
-                <div class="award-item">
-                    <img src="img/about/award-img.png" alt="">
-                    <h5>2012</h5>
-                    <h4>Best Services</h4>
-                    <span>Elite Hotel award</span>
-                    <p>Ipsum dolor sit amet, consectetur adipiselit. Vivamus libero mauris, bibendum eget sapien ac,
-                        ultrices rhoncus ipsum. Donec nec sapien in urna fermentum ornare.</p>
-                </div>
-            </div>
-            <div class="col-lg-4 col-sm-6">
-                <div class="award-item">
-                    <img src="img/about/award-img.png" alt="">
-                    <h5>2014</h5>
-                    <h4>Best Hotel Spa</h4>
-                    <span>Elite Hotel award</span>
-                    <p>Dolor sit amet, consectetur adipiselit. Vivamus libero mauris, bibendum eget sapien ac,
-                        ultrices rhoncus ipsum. Donec nec sapien in urna fermentum ornare. </p>
-                </div>
-            </div>
-            <div class="col-lg-4 col-sm-6">
-                <div class="award-item">
-                    <img src="img/about/award-img.png" alt="">
-                    <h5>2016</h5>
-                    <h4>Best Luxury Hotel</h4>
-                    <span>Elite Hotel award</span>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiselit. Vivamus libero mauris, bibendum eget
-                        sapien ac, ultrices rhoncus ipsum. Donec nec sapien in urna.</p>
-                </div>
-            </div>
-            <div class="col-lg-4 col-sm-6">
-                <div class="award-item">
-                    <img src="img/about/award-img.png" alt="">
-                    <h5>2017</h5>
-                    <h4>2nd Place @ Best Hotel</h4>
-                    <span>Elite Hotel award</span>
-                    <p>Ipsum dolor sit amet, consectetur adipiselit. Vivamus libero mauris, bibendum eget sapien ac,
-                        ultrices rhoncus ipsum. Donec nec sapien in urna fermentum ornare.</p>
-                </div>
-            </div>
-            <div class="col-lg-4 col-sm-6">
-                <div class="award-item">
-                    <img src="img/about/award-img.png" alt="">
-                    <h5>2018</h5>
-                    <h4>Best Hotel Spa</h4>
-                    <span>Elite Hotel award</span>
-                    <p>Dolor sit amet, consectetur adipiselit. Vivamus libero mauris, bibendum eget sapien ac,
-                        ultrices rhoncus ipsum. Donec nec sapien in urna fermentum ornare.</p>
-                </div>
-            </div>
+            <?endforeach;?>
         </div>
     </div>
 </section>
+<?endif;?>
 <!-- Award Section End -->
 
 <!-- Call To Action Begin -->
@@ -158,7 +110,7 @@
         <div class="callto-text">
             <h2>Book your stay with us now!</h2>
         </div>
-        <a href="#" class="primary-btn">Make a Reservation</a>
+        <a href="reservation" class="primary-btn">Make a Reservation</a>
     </div>
 </section>
 <!-- Call To Action End  -->
