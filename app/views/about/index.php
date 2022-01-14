@@ -34,25 +34,25 @@
 <?endif;?>
 <!-- About Us Section End -->
 <!-- Milestone Counter Section Begin -->
+<?if(!empty($us)):?>
 <section class="milestone-counter spad set-bg" data-setbg="img/about/milestone-bg.jpg">
     <div class="container">
         <div class="row">
             <div class="col-md-4">
                 <div class="mc-item">
                     <div class="mc-num">
-                        <span class="counter">25</span>
+                        <span class="counter"><?=$us['count']?></span>
                     </div>
                     <div class="mc-text">
                         <h3>Luxury Suites</h3>
-                        <p>From $399</p>
+                        <p>From $<?=$us['price']?></p>
                     </div>
                 </div>
             </div>
             <div class="col-md-4">
                 <div class="mc-item">
                     <div class="mc-num">
-                        <span class="counter">35</span>
-                        <strong>K</strong>
+                        <span class="counter"><?=$us['guests']?></span>
                     </div>
                     <div class="mc-text">
                         <h3>Happy Clients</h3>
@@ -67,15 +67,15 @@
                     </div>
                     <div class="mc-text">
                         <h3>Days/ Year</h3>
-                        <p>From $399</p>
+                        <p>From $<?=$us['price']?></p>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 </section>
+<?endif;?>
 <!-- Milestone Counter Section End -->
-
 <!-- Award Section Begin -->
 <section class="award-section spad">
     <div class="container">

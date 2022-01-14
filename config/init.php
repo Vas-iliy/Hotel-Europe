@@ -10,6 +10,9 @@ define("LIBS", ROOT . '/vendor/europa/core/libs');
 define("CACHE", ROOT . '/tmp/cache');
 define("CONFIG", ROOT . '/config');
 define("LAYOUT", 'europa');
+$url = ((!empty($_SERVER['HTTPS'])) ? 'https' : 'http') . '://' . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
+define('URL', $url);
+
 
 $app_path = "http://{$_SERVER['HTTP_HOST']}{$_SERVER['PHP_SELF']}";
 $app_path = preg_replace("#[^/]+$#", '', $app_path);

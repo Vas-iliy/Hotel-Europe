@@ -1,4 +1,4 @@
-a:2:{s:4:"data";s:1749:"    <header class="header-section">
+a:2:{s:4:"data";s:1729:"    <header class="header-section">
         <div class="container-fluid">
             <div class="inner-header">
                 <div class="logo">
@@ -9,22 +9,22 @@ a:2:{s:4:"data";s:1749:"    <header class="header-section">
                 </div>
                 <nav class="main-menu mobile-menu">
                     <ul>
-                                                <li class="active">
+                                                <li>
                             <a href="http://projecttrening/HotelEuropa">Home</a>
                         </li>
-                                                <li >
+                                                <li>
                             <a href="http://projecttrening/HotelEuropa/about">About</a>
                         </li>
-                                                <li >
+                                                <li>
                             <a href="http://projecttrening/HotelEuropa/rooms">Rooms</a>
                         </li>
-                                                <li >
+                                                <li>
                             <a href="http://projecttrening/HotelEuropa/services">Services</a>
                         </li>
-                                                <li >
+                                                <li>
                             <a href="http://projecttrening/HotelEuropa/news">News</a>
                         </li>
-                                                <li >
+                                                <li>
                             <a href="http://projecttrening/HotelEuropa/contact">Contact</a>
                         </li>
                                             </ul>
@@ -33,4 +33,4 @@ a:2:{s:4:"data";s:1749:"    <header class="header-section">
             </div>
         </div>
     </header>
-";s:8:"end_time";i:1673622269;}
+";s:8:"end_time";i:1673676311;}

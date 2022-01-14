@@ -11,7 +11,7 @@
                 <nav class="main-menu mobile-menu">
                     <ul>
                         <?foreach ($this->data as $menu):?>
-                        <li <?=(($_SERVER['REQUEST_URI'] === '/' . $menu['alias']) || ($menu['alias'] === 'home') ? 'class="active"' : '')?>>
+                        <li>
                             <a href="<?=($menu['alias'] === 'home' ? PATH : PATH  . '/'. $menu['alias'])?>"><?=$menu['title']?></a>
                         </li>
                         <?endforeach;?>
