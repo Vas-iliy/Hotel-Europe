@@ -1,4 +1,4 @@
-<section class="search-filter">
+a:2:{s:4:"data";s:2016:"<section class="search-filter">
     <div class="container">
         <div class="row">
             <div class="col-lg-12">
@@ -25,16 +25,16 @@
                         </div>
                         <div class="single-quantity last">
                             <p>Rooms</p>
-                            <div class="pro-qty"><input type="number" class="countRoom" min="1" max="<?=$this->count['count']?>" name="countRoom" value="1"></div>
+                            <div class="pro-qty"><input type="number" class="countRoom" min="1" max="4" name="countRoom" value="1"></div>
                         </div>
                     </div>
                     <div class="room-selector">
                         <p>Price</p>
-                        <input name="price" class="price" type="text" placeholder="$<?=$this->price[0]?> - $<?=$this->price[1]?>">
+                        <input name="price" class="price" type="text" placeholder="$256 - $1560">
                     </div>
                     <button type="submit">Go</button>
                 </form>
             </div>
         </div>
     </div>
-</section>
+</section>";s:8:"end_time";i:1642235816;}
