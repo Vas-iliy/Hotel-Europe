@@ -19,6 +19,7 @@ class AppController extends Controller
             throw new \Exception('Страница не найдена', 404);
         }
         self::cacheMenu();
+        unset($_SESSION['params']);
     }
 
     public static function cacheMenu() {

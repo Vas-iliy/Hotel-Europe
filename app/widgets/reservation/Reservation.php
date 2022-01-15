@@ -4,12 +4,14 @@
 namespace app\widgets\reservation;
 
 
+use europa\App;
 use europa\Cache;
 
 class Reservation
 {
     public $price;
     public $count;
+    public $params;
     public $tpl;
 
     public function __construct()
@@ -19,14 +21,9 @@ class Reservation
     }
 
     public function run() {
-        $cache = Cache::instance();
-        $reservation = $cache->get('reservation');
-        if (!$reservation) {
-            $this->price = self::getPrice();
-            $this->count = self::getCount();
-            $reservation = $this->getHtml();
-            $cache->set('reservation', $reservation, 3600*24);
-        }
+        $this->price = self::getPrice();
+        $this->count = self::getCount();
+        $reservation = $this->getHtml();
         echo $reservation;
     }
 
@@ -46,5 +43,4 @@ class Reservation
         require $this->tpl;
         return ob_get_clean();
     }
-
 }

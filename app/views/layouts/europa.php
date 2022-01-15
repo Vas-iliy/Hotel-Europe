@@ -50,6 +50,22 @@
 <!-- Search Filter Section Begin -->
 <?new \app\widgets\reservation\Reservation();?>
 <!-- Search Filter Section End -->
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <?if(isset($_SESSION['error'])):?>
+                <div class="alert alert-danger">
+                    <?=$_SESSION['error']; unset($_SESSION['error']);?>
+                </div>
+            <?endif;?>
+            <?if(isset($_SESSION['success'])):?>
+                <div class="alert alert-success">
+                    <?=$_SESSION['success']; unset($_SESSION['success']);?>
+                </div>
+            <?endif;?>
+        </div>
+    </div>
+</div>
 <?=$content?>
 <!-- Footer Section Begin -->
 <footer class="footer-section">
