@@ -3,7 +3,7 @@
 namespace europa\base;
 
 use europa\Db;
-//use Valitron\Validator;
+use Valitron\Validator;
 
 abstract class Model
 {
@@ -40,7 +40,7 @@ abstract class Model
         return \R::store($bean);
     }
 
-    /*public function validate($data) {
+    public function validate($data) {
         Validator::lang('ru');
         $v = new Validator($data);
         $v->rules($this->rules);
@@ -49,7 +49,7 @@ abstract class Model
         }
         $this->errors = $v->errors();
         return  false;
-    }*/
+    }
 
     public function getErrors() {
         $errors = "<ul>";
