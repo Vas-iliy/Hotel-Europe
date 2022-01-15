@@ -70,4 +70,19 @@ class ReservationModel extends AppModel
         }
         return true;
     }
+
+    public static function getStartRooms() {
+        $rooms = \R::getAll('SELECT * FROM rooms');
+        $rooms_id = AppModel::getId($rooms);
+        $rooms = EnabledModel::roomsEnabled(ImageModel::withImg('room', 'images',$rooms, true, $rooms_id), $rooms_id);
+        $countRooms = \R::getAll('SELECT * FROM count JOIN room_count ON count.id = count_id');
+        foreach ($countRooms as $key => $count) {
+            foreach ($rooms as $k => $room) {
+                if ($count['room_id'] === $room['id']) {
+                    $countRooms[$key] = array_merge($rooms[$k], ['count' => $count['count'], 'factor' => $count['factor']]);
+                }
+            }
+        }
+        return $countRooms;
+    }
 }
