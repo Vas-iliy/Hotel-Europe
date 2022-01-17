@@ -11,11 +11,13 @@ class EnabledModel extends AppModel
         foreach ($rooms_id as $room_id) {
             $enabled[] = \R::getAll('SELECT * FROM enabled JOIN room_enabled ON enabled.id = enabled_id WHERE room_id = ?', [$room_id]);
         }
-        foreach ($rooms as $k =>$room) {
-            foreach ($enabled as $item) {
-                foreach ($item as $value) {
-                    if ($room['id'] == $value['room_id']) {
-                        $rooms[$k]['enabled'][] = $value;
+        if (!empty($enabled)) {
+            foreach ($rooms as $k =>$room) {
+                foreach ($enabled as $item) {
+                    foreach ($item as $value) {
+                        if ($room['id'] == $value['room_id']) {
+                            $rooms[$k]['enabled'][] = $value;
+                        }
                     }
                 }
             }

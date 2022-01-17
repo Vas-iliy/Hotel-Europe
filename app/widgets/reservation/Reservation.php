@@ -3,10 +3,6 @@
 
 namespace app\widgets\reservation;
 
-
-use europa\App;
-use europa\Cache;
-
 class Reservation
 {
     public $price;

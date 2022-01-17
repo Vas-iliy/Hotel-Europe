@@ -138,9 +138,7 @@ ol {
 	line-height: 48px;
 	font-weight: 600;
 	margin-top: 14px;
-	margin-bottom: 40px;
 }
-
 .set-bg {
 	background-repeat: no-repeat;
 	background-size: cover;
@@ -1223,14 +1221,6 @@ ol {
 	padding-top: 170px;
 }
 
-.ri-text p {
-	margin-bottom: 62px;
-}
-
-.ri-text .ri-features {
-	margin-bottom: 50px;
-}
-
 .ri-text .ri-features .ri-info {
 	display: inline-block;
 	text-align: center;
@@ -2046,4 +2036,13 @@ input::-webkit-inner-spin-button {
 	/* display: none; <- Crashes Chrome on hover */
 	-webkit-appearance: none;
 	margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
+}
+
+.row-flex {
+	display: flex;
+	flex-flow: row wrap;
+}
+.count-btn {
+	position: absolute;
+	bottom: 0px;
 }

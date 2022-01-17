@@ -4,8 +4,27 @@
 namespace app\models;
 
 
+use app\widgets\reservation\Reservation;
+
 class ReservationModel extends AppModel
 {
+    public $rules = [
+        'integer' => [
+            ['adults'],
+            ['children'],
+            ['countRoom'],
+            ['price']
+        ],
+        'date' => [
+            ['to'],
+            ['from']
+        ],
+        'min' => [
+            ['adults', 1],
+            ['countRoom', 1],
+        ]
+    ];
+
     public static function getRooms($params, $rooms) {
         if (self::checkGuests($params)) {
             $bron = self::getBronRooms($params);
@@ -74,15 +93,6 @@ class ReservationModel extends AppModel
     public static function getStartRooms() {
         $rooms = \R::getAll('SELECT * FROM rooms');
         $rooms_id = AppModel::getId($rooms);
-        $rooms = EnabledModel::roomsEnabled(ImageModel::withImg('room', 'images',$rooms, true, $rooms_id), $rooms_id);
-        $countRooms = \R::getAll('SELECT * FROM count JOIN room_count ON count.id = count_id');
-        foreach ($countRooms as $key => $count) {
-            foreach ($rooms as $k => $room) {
-                if ($count['room_id'] === $room['id']) {
-                    $countRooms[$key] = array_merge($rooms[$k], ['count' => $count['count'], 'factor' => $count['factor']]);
-                }
-            }
-        }
-        return $countRooms;
+        return CountModel::roomsCount(ImageModel::withImg('room', 'images',$rooms, true, $rooms_id), $rooms_id);
     }
 }
