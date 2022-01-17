@@ -90,8 +90,9 @@ class ReservationModel extends AppModel
         return true;
     }
 
-    public static function getStartRooms() {
-        $rooms = \R::getAll('SELECT * FROM rooms');
+    public static function getStartRooms($price = 999999) {
+        if (empty($price)) $price = 999999;
+        $rooms = \R::getAll("SELECT * FROM rooms WHERE price <= ?", [$price]);
         $rooms_id = AppModel::getId($rooms);
         return CountModel::roomsCount(ImageModel::withImg('room', 'images',$rooms, true, $rooms_id), $rooms_id);
     }

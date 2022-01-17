@@ -22,13 +22,13 @@ class ReservationController extends AppController
                     $_SESSION['error'] = 'Такой номер недоступен';
                     redirect($_SERVER['HTTP_REFERER']);
                 } else {
-                    $rooms = ReservationModel::getRooms($params, ReservationModel::getStartRooms());
-                    $this->set(compact('rooms'));
+                    $rooms = ReservationModel::getRooms($params, ReservationModel::getStartRooms($params['price']));
+                    $this->set(compact('rooms', 'pagination'));
                 }
             }
         } else {
             $rooms = ReservationModel::getStartRooms();
-            $this->set(compact('rooms'));
+            $this->set(compact('rooms', 'pagination'));
         }
         $this->setMeta('Reservation');
     }
