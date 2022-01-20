@@ -3,6 +3,8 @@
 
 namespace app\controllers;
 
+use app\models\EnabledModel;
+use app\models\ImageModel;
 use app\models\ReservationModel;
 use app\widgets\reservation\Reservation;
 
@@ -31,6 +33,16 @@ class ReservationController extends AppController
             $this->set(compact('rooms', 'pagination'));
         }
         $this->setMeta('Reservation');
+    }
+
+    public function roomAction()
+    {
+        $this->layout = 'reserv';
+        $alias = h($this->route['alias']);
+        $room = \R::findOne('rooms');
+        $imgs = \R::findAll('images', 'room_id = ?', [$room->id]);
+        $enabled = \R::getAll('SELECT enabled.* FROM enabled JOIN room_enabled ON enabled.id = enabled_id WHERE room_id = ?', [$room->id]);
+        debug($enabled);
     }
 
 }

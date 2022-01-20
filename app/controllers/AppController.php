@@ -19,7 +19,7 @@ class AppController extends Controller
             throw new \Exception('Страница не найдена', 404);
         }
         self::cacheMenu();
-        if (empty($_GET['page'])) {
+        if (!preg_match('/reservation/', $_SERVER['REQUEST_URI'])) {
             unset($_SESSION['params']);
         }
     }

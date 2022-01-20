@@ -38,7 +38,7 @@
                                 <?endforeach;?>
                             </div>
                         <?endif;?>
-                        <a href="/rooms/<?=$room['alias']?>" class="primary-btn">Make a Reservation</a>
+                        <a href="reservation/<?=$room['alias']?>" class="primary-btn">Make a Reservation</a>
                     </div>
                 </div>
             <?endforeach;?>
