@@ -25,7 +25,13 @@
                                     <?foreach ($room['count'] as $count):?>
                                         <p>Room: <?=$count['count']?> Price: $<?=$count['factor']*$room['price']?></p>
                                     <?endforeach;?>
-                                    <a href="reservation/<?=$room['alias']?>" class="primary-btn count-btn">Make a Reservation</a>
+                                    <form action="reservation/<?=$room['alias']?>" method="post">
+                                        <?foreach ($room['count'] as $count):?>
+                                            <input type="hidden" name="count[]" value="<?=$count['count'] . ',' . $count['factor']?>">
+                                        <?endforeach;?>
+                                        <input type="submit" class="primary-btn count-btn" value="Make a Reservation">
+                                    </form>
+                                    <!--<a href="reservation/<?/*=$room['alias']*/?>" class="primary-btn count-btn">Make a Reservation</a>-->
                                 </div>
                             </div>
                         </div>

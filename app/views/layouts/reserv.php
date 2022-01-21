@@ -25,19 +25,7 @@
 <div id="preloder">
     <div class="loader"></div>
 </div>
-
-<!-- Header Section Begin -->
-<!--<header class="header-section">
-    <div class="container-fluid">
-        <div class="inner-header">
-            <div class="logo">
-                <a href="<?/*=PATH*/?>"><img src="img/logo.png" alt=""></a>
-            </div>
-            <div id="mobile-menu-wrap"></div>
-        </div>
-    </div>
-</header>-->
-
+<div class="clearfix"> </div>
 <!-- Search Filter Section End -->
 <div class="container">
     <div class="row">
@@ -55,7 +43,7 @@
         </div>
     </div>
 </div>
-<div class="clearfix"> </div>
+
 
 <?=$content?>
 <!-- Js Plugins -->

@@ -1,10 +1,7 @@
 <?php
 
-
 namespace app\controllers;
 
-use app\models\EnabledModel;
-use app\models\ImageModel;
 use app\models\ReservationModel;
 use app\widgets\reservation\Reservation;
 
@@ -35,14 +32,18 @@ class ReservationController extends AppController
         $this->setMeta('Reservation');
     }
 
-    public function roomAction()
-    {
+    public function roomAction() {
         $this->layout = 'reserv';
         $alias = h($this->route['alias']);
-        $room = \R::findOne('rooms');
-        $imgs = \R::findAll('images', 'room_id = ?', [$room->id]);
-        $enabled = \R::getAll('SELECT enabled.* FROM enabled JOIN room_enabled ON enabled.id = enabled_id WHERE room_id = ?', [$room->id]);
-        debug($enabled);
+        $count = $_POST['count'];
+        foreach ($count as $k => $v) {
+            $count[$k] = explode(',', $v);
+        }
+        $room = \R::getRow('SELECT * FROM rooms WHERE alias = ?', [$alias]);
+        $imgs = \R::findAll('images', 'room_id = ?', [$room['id']]);
+        $enabled = \R::getAll('SELECT enabled.* FROM enabled JOIN room_enabled ON enabled.id = enabled_id WHERE room_id = ?', [$room['id']]);
+        $this->setMeta("Reservation::{$room['title']}");
+        $this->set(compact('room', 'imgs', 'enabled', 'count'));
     }
 
 }
